@@ -1,4 +1,19 @@
 {
     "clients": [],
-    "orders":[]
+    "orders":[
+        {
+            "id": 1,
+            "clientId":12,
+            "status": "new",
+            "weight":5000,
+            "destination": "Russia,St Petersberg,Sokolova 43"
+        },
+        {
+            "id": 2,
+            "clientId":10,
+            "status": "new",
+            "weight":2000,
+            "destination": "Russia,St Petersberg,Maslova 4"
+        }
+    ]
 }
