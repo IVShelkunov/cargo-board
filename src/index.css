@@ -1,1 +1,24 @@
 @import "tailwindcss";
+ @layer {
+    input {
+        background-color:var(--color-yellow-200);
+        border-radius: 15px;
+        padding: 0 10px;
+    }
+    select {
+        background-color: var(--color-sky-700);
+        border-radius: 15px;
+        padding: 0 10px;
+    }
+    button {
+        border-radius: 15px;
+        background-color:var(--color-sky-900);
+        color: white;
+        cursor: pointer;
+        padding: 8px;
+    }
+    button:hover {
+        background-color: var(--color-sky-800);
+    }
+
+ }

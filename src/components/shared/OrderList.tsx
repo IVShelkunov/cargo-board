@@ -47,11 +47,11 @@ export function OrderList() {
           </thead>
           <tbody>
             {data.map((order) => (
-              <tr key={order.id}>
+              <tr key={order.id} className="hover:bg-slate-300">
                 {columns.map((col) => (
                   <td
                     key={`${order.id}-${col.key}`}
-                    className="border boder-black border-collapse p-1"
+                    className="border boder-black border-collapse p-1 wrap-break-word"
                   >
                     {order[col.key as keyof typeof order]}
                   </td>
