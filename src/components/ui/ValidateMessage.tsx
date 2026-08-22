@@ -1,0 +1,3 @@
+export function ValidateMessage({ message }: { message: string | undefined }) {
+  return <div className="text-red-500">{message}</div>;
+}

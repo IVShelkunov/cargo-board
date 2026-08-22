@@ -1,19 +1,142 @@
 {
-    "clients": [],
-    "orders":[
-        {
-            "id": 1,
-            "clientId":12,
-            "status": "new",
-            "weight":5000,
-            "destination": "Russia,St Petersberg,Sokolova 43"
-        },
-        {
-            "id": 2,
-            "clientId":10,
-            "status": "new",
-            "weight":2000,
-            "destination": "Russia,St Petersberg,Maslova 4"
-        }
-    ]
+  "clients": [],
+  "orders": [
+    {
+      "id": "1",
+      "clientId": 12,
+      "status": "new",
+      "weight": 5000,
+      "destination": "Russia,St Petersberg,Sokolova 43"
+    },
+    {
+      "id": "2",
+      "clientId": 10,
+      "status": "new",
+      "weight": 2000,
+      "destination": "Russia,St Petersberg,Maslova 4"
+    },
+    {
+      "newOrder": {
+        "id": 1787319643583,
+        "clientId": "10",
+        "status": "delivered",
+        "weight": 1,
+        "destination": "Rostov,Voroshilovsky,10"
+      },
+      "id": "CTn4o6LrawU"
+    },
+    {
+      "id": "i1kcvNQRHro",
+      "clientId": "8",
+      "status": "in_transit",
+      "weight": 2000,
+      "destination": "Taganrog,Sedova,6"
+    },
+    {
+      "clientId": "23",
+      "status": "delivered",
+      "weight": 4000,
+      "destination": "Moskow,Koroleva,3",
+      "id": "1LciBcyN46o"
+    },
+    {
+      "clientId": "-1",
+      "status": "new",
+      "weight": 5000,
+      "destination": "Dmitrovo",
+      "id": "j6UbJ3WddIg"
+    },
+    {
+      "clientId": "3",
+      "status": "in_transit",
+      "weight": 3400,
+      "destination": "Omsk,Pushkina,25",
+      "id": "qRxywPSYM9I"
+    },
+    {
+      "clientId": "34",
+      "status": "new",
+      "weight": 1300,
+      "destination": "Ufa,Sadovaya,21",
+      "id": "-8emSV1_NVY"
+    },
+    {
+      "clientId": "190",
+      "status": "in_transit",
+      "weight": 2700,
+      "destination": "Ryazan,Dobrovskaya,10",
+      "id": "hP_Z8HKIqUY"
+    },
+    {
+      "clientId": "1223",
+      "status": "in_transit",
+      "weight": 3000,
+      "destination": "Rostov,Orskaya,49",
+      "id": "b3i6jsjlN0c"
+    },
+    {
+      "clientId": "341",
+      "status": "delivered",
+      "weight": 5432,
+      "destination": "Dzerzhinsk,Nalava,45",
+      "id": "DcLg13iewfs"
+    },
+    {
+      "clientId": "98",
+      "status": "in_transit",
+      "weight": 1456,
+      "destination": "Minsk,Tupoleva,63",
+      "id": "_QCT8_wnc80"
+    },
+    {
+      "clientId": "122",
+      "status": "new",
+      "weight": 300,
+      "destination": "Deret,Stelll,7",
+      "id": "RJjJ3Le4H4A"
+    },
+    {
+      "clientId": "154",
+      "status": "new",
+      "weight": 3099,
+      "destination": "Shahty,Ermaka,18",
+      "id": "jmAE990mr3E"
+    },
+    {
+      "clientId": "143",
+      "status": "in_transit",
+      "weight": 3500,
+      "destination": "Tula,Zarechnaya,91",
+      "id": "S6y7uGLSeSE"
+    },
+    {
+      "clientId": "qw12",
+      "status": "new",
+      "weight": 4500,
+      "destination": "Ermaki,Askel,43",
+      "id": "BRPMH9hOYbs"
+    },
+    {
+      "clientId": "qww4e",
+      "status": "new",
+      "weight": 4500,
+      "destination": "Dom,Domova,123",
+      "id": "nmlKUju2ETY"
+    },
+    {
+      "clientId": "123",
+      "status": "new",
+      "weight": 3000,
+      "destination": "Desskjfof",
+      "id": "5Fj0kiM8o40"
+    },
+    {
+      "clientId": "Il3839",
+      "status": "delivered",
+      "weight": 1299,
+      "destination": "Debalcevo,Petrova,1",
+      "id": "wrdLV5LXwTM"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
