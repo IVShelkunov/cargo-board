@@ -8,8 +8,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { addOrders } from "../../features/orders/api/orderApi";
 import { ValidateMessage } from "../ui/ValidateMessage";
+import { useModalStore } from "../../store/useModalStore";
 
 export function CreateOrderForm() {
+  const { closeModal } = useModalStore();
   const queryClient = useQueryClient();
   const {
     register,
@@ -24,6 +26,7 @@ export function CreateOrderForm() {
     mutationFn: (orderData: CreateOrderDTO) => addOrders(orderData),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["orders"] });
+      closeModal();
     },
   });
   const onSubmit: SubmitHandler<CreateOrderDTO> = async (
@@ -72,6 +75,13 @@ export function CreateOrderForm() {
       {errors.root && <ValidateMessage message={errors.root.message} />}
       <button type="submit" disabled={createMutate.isPending}>
         {createMutate.isPending ? "SAVING..." : "CREATE ORDER"}
+      </button>
+      <button
+        type="button"
+        onClick={closeModal}
+        disabled={createMutate.isPending}
+      >
+        CANCEL
       </button>
     </form>
   );
