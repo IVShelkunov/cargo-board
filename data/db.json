@@ -136,6 +136,20 @@
       "weight": 1299,
       "destination": "Debalcevo,Petrova,1",
       "id": "wrdLV5LXwTM"
+    },
+    {
+      "clientId": "1233",
+      "status": "new",
+      "weight": 4000,
+      "destination": "Delovo,Sedova,5",
+      "id": "AADQ-l09Qo0"
+    },
+    {
+      "clientId": "234eed",
+      "status": "in_transit",
+      "weight": 5430,
+      "destination": "Orel,Guluva,56",
+      "id": "_MDKU2mzuhQ"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
