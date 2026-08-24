@@ -18,7 +18,7 @@ export default function Modal() {
   return (
     <div
       onClick={closeModal}
-      className=" fixed inset-0 z-50 w-full h-screen flex items-center justify-center bg-black/50 "
+      className=" fixed inset-0 z-50 w-full h-screen flex items-center justify-center bg-black/55 "
     >
       <div onClick={(e) => e.stopPropagation()}>
         <CreateOrderForm />

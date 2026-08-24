@@ -40,7 +40,7 @@ export function OrderList() {
                   className="border boder-black border-collapse p-1"
                   key={col.key}
                 >
-                  {col.label}
+                  {col.label.toUpperCase()}
                 </th>
               ))}
             </tr>
