@@ -1,8 +1,9 @@
-import { useQuery } from "@tanstack/react-query";
-import { getOrders } from "../../features/orders/api/orderApi";
-import ReloadRow from "../icons/ReloadRow";
+import type { Order } from "../../features/orders/types/orders.schema";
 
-export function OrderList() {
+interface OrderListProps {
+  orders: Order[];
+}
+export function OrderList({ orders }: OrderListProps) {
   const columns = [
     { key: "id", label: "ID" },
     { key: "clientId", label: "Client" },
@@ -10,57 +11,37 @@ export function OrderList() {
     { key: "weight", label: "Weight (kg)" },
     { key: "destination", label: "Addres" },
   ];
-  const { data, isLoading, isError, refetch } = useQuery({
-    queryKey: ["orders"],
-    queryFn: () => getOrders(),
-  });
+
   return (
     <div className="flex flex-col items-center justify-center">
-      {isLoading && <div className="text-slate-400">Loading...</div>}
-      {isError && (
-        <div className="flex flex-col items-center justify-center gap-4">
-          <p className="text-red-500">Loading error</p>
-          <button
-            className="bg-sky-900 hover:bg-sky-800 text-white flex items-center justify-center gap-1 p-2 rounded-2xl cursor-pointer"
-            onClick={() => refetch()}
-          >
-            Retry
-            <ReloadRow className="w-5 h-5" />
-          </button>
-        </div>
-      )}
-      {!data ||
-        (data.length === 0 && <div className="text-slate-400">No orders</div>)}
-      {data && data.length !== 0 && (
-        <table className="bg-slate-400 ">
-          <thead>
-            <tr>
+      <table className="bg-slate-400 ">
+        <thead>
+          <tr>
+            {columns.map((col) => (
+              <th
+                className="border boder-black border-collapse p-1"
+                key={col.key}
+              >
+                {col.label.toUpperCase()}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {orders.map((order) => (
+            <tr key={order.id} className="hover:bg-slate-300">
               {columns.map((col) => (
-                <th
-                  className="border boder-black border-collapse p-1"
-                  key={col.key}
+                <td
+                  key={`${order.id}-${col.key}`}
+                  className="border boder-black border-collapse p-1 wrap-break-word"
                 >
-                  {col.label.toUpperCase()}
-                </th>
+                  {order[col.key as keyof typeof order]}
+                </td>
               ))}
             </tr>
-          </thead>
-          <tbody>
-            {data.map((order) => (
-              <tr key={order.id} className="hover:bg-slate-300">
-                {columns.map((col) => (
-                  <td
-                    key={`${order.id}-${col.key}`}
-                    className="border boder-black border-collapse p-1 wrap-break-word"
-                  >
-                    {order[col.key as keyof typeof order]}
-                  </td>
-                ))}
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+          ))}
+        </tbody>
+      </table>
     </div>
   );
 }

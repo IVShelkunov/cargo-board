@@ -16,16 +16,6 @@
       "destination": "Russia,St Petersberg,Maslova 4"
     },
     {
-      "newOrder": {
-        "id": 1787319643583,
-        "clientId": "10",
-        "status": "delivered",
-        "weight": 1,
-        "destination": "Rostov,Voroshilovsky,10"
-      },
-      "id": "CTn4o6LrawU"
-    },
-    {
       "id": "i1kcvNQRHro",
       "clientId": "8",
       "status": "in_transit",
@@ -165,6 +155,5 @@
       "destination": "Desavrovo,2",
       "id": "KpZBGMKXQA0"
     }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  ]
 }
