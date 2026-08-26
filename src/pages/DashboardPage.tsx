@@ -8,6 +8,7 @@ import { getOrders } from "../features/orders/api/orderApi";
 import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { useDebounce } from "../hooks/useDebounce";
 import { useState } from "react";
+import { OrderDetail } from "../components/shared/OrderDetails";
 
 export function DashboardPage() {
   const [inputValue, setInputValue] = useState("");
@@ -26,7 +27,11 @@ export function DashboardPage() {
           DASHBOARD
         </h2>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <ActionButton type="button" disabled={false} action={openModal}>
+          <ActionButton
+            type="button"
+            disabled={false}
+            action={() => openModal()}
+          >
             CREATE ORDER
             <AddCross className="w-4 h-4" />
           </ActionButton>
@@ -37,15 +42,18 @@ export function DashboardPage() {
             onChange={(e) => setInputValue(e.target.value)}
           />
         </div>
-        {isLoading && <div className="text-slate-400">Loading...</div>}
-        {isError && <ErrorMessage action={refetch} />}
-        {!data ||
-          (data.length === 0 && (
-            <div className="text-slate-400 flex items-center justify-center ">
-              <p>No orders</p>
-            </div>
-          ))}
-        {data && data.length !== 0 && <OrderList orders={data} />}
+        <div className="flex  justify-center gap-4">
+          {isLoading && <div className="text-slate-400">Loading...</div>}
+          {isError && <ErrorMessage action={refetch} />}
+          {!data ||
+            (data.length === 0 && (
+              <div className="text-slate-400 flex items-center justify-center ">
+                <p>No orders</p>
+              </div>
+            ))}
+          {data && data.length !== 0 && <OrderList orders={data} />}
+          <OrderDetail />
+        </div>
       </div>
     </main>
   );

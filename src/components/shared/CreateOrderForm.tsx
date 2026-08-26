@@ -6,7 +6,7 @@ import FormGroup from "../ui/FormGroup";
 import { useForm, type SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { addOrders } from "../../features/orders/api/orderApi";
+import { addOrder } from "../../features/orders/api/orderApi";
 import { ValidateMessage } from "../ui/ValidateMessage";
 import { useModalStore } from "../../store/useModalStore";
 import { useState } from "react";
@@ -17,7 +17,6 @@ import CancelCross from "../icons/CancelCross";
 import AddCross from "../icons/AddCross";
 
 export function CreateOrderForm() {
-  const [step, setStep] = useState(1);
   const { closeModal } = useModalStore();
   const queryClient = useQueryClient();
   const {
@@ -31,7 +30,7 @@ export function CreateOrderForm() {
     resolver: zodResolver(createOrderSchema) as any,
   });
   const createMutate = useMutation({
-    mutationFn: (orderData: CreateOrderDTO) => addOrders(orderData),
+    mutationFn: (orderData: CreateOrderDTO) => addOrder(orderData),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["orders"] });
       closeModal();
@@ -49,6 +48,7 @@ export function CreateOrderForm() {
       }
     }
   };
+  const [step, setStep] = useState(1);
   const handleNext = async () => {
     const isStepValid = await trigger(["clientId", "status"]);
     if (isStepValid) setStep(2);
