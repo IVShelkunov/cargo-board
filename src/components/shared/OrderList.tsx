@@ -1,4 +1,5 @@
 import type { Order } from "../../features/orders/types/orders.schema";
+import { useOrderStore } from "../../store/useOrderStore";
 
 interface OrderListProps {
   orders: Order[];
@@ -11,7 +12,7 @@ export function OrderList({ orders }: OrderListProps) {
     { key: "weight", label: "Weight (kg)" },
     { key: "destination", label: "Addres" },
   ];
-
+  const { setSelectedOrderId } = useOrderStore();
   return (
     <div className="flex flex-col items-center justify-center">
       <table className="bg-slate-400 ">
@@ -29,7 +30,11 @@ export function OrderList({ orders }: OrderListProps) {
         </thead>
         <tbody>
           {orders.map((order) => (
-            <tr key={order.id} className="hover:bg-slate-300">
+            <tr
+              key={order.id}
+              className="hover:bg-slate-300 hover:cursor-pointer"
+              onClick={() => setSelectedOrderId(order.id)}
+            >
               {columns.map((col) => (
                 <td
                   key={`${order.id}-${col.key}`}

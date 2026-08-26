@@ -2,53 +2,11 @@
   "clients": [],
   "orders": [
     {
-      "id": "1",
-      "clientId": 12,
-      "status": "new",
-      "weight": 5000,
-      "destination": "Russia,St Petersberg,Sokolova 43"
-    },
-    {
-      "id": "2",
-      "clientId": 10,
-      "status": "new",
-      "weight": 2000,
-      "destination": "Russia,St Petersberg,Maslova 4"
-    },
-    {
-      "id": "i1kcvNQRHro",
-      "clientId": "8",
+      "clientId": "23145",
       "status": "in_transit",
-      "weight": 2000,
-      "destination": "Taganrog,Sedova,6"
-    },
-    {
-      "clientId": "23",
-      "status": "delivered",
-      "weight": 4000,
+      "weight": 3992,
       "destination": "Moskow,Koroleva,3",
       "id": "1LciBcyN46o"
-    },
-    {
-      "clientId": "-1",
-      "status": "new",
-      "weight": 5000,
-      "destination": "Dmitrovo",
-      "id": "j6UbJ3WddIg"
-    },
-    {
-      "clientId": "3",
-      "status": "in_transit",
-      "weight": 3400,
-      "destination": "Omsk,Pushkina,25",
-      "id": "qRxywPSYM9I"
-    },
-    {
-      "clientId": "34",
-      "status": "new",
-      "weight": 1300,
-      "destination": "Ufa,Sadovaya,21",
-      "id": "-8emSV1_NVY"
     },
     {
       "clientId": "190",
@@ -77,13 +35,6 @@
       "weight": 1456,
       "destination": "Minsk,Tupoleva,63",
       "id": "_QCT8_wnc80"
-    },
-    {
-      "clientId": "122",
-      "status": "new",
-      "weight": 300,
-      "destination": "Deret,Stelll,7",
-      "id": "RJjJ3Le4H4A"
     },
     {
       "clientId": "154",
@@ -149,11 +100,12 @@
       "id": "f_ZyuUt-cak"
     },
     {
-      "clientId": "w",
+      "clientId": "12334",
       "status": "new",
-      "weight": 12334,
-      "destination": "Desavrovo,2",
-      "id": "KpZBGMKXQA0"
+      "weight": 12222,
+      "destination": "Azov,Pobedy,12",
+      "id": "-qxaab18jaI"
     }
-  ]
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }

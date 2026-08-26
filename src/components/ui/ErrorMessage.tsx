@@ -3,22 +3,12 @@ import type {
   RefetchOptions,
 } from "@tanstack/react-query";
 import ReloadRow from "../icons/ReloadRow";
+import type { Order } from "../../features/orders/types/orders.schema";
 
 interface ErrorMessageProps {
-  action: (options?: RefetchOptions | undefined) => Promise<
-    QueryObserverResult<
-      NoInfer<
-        {
-          clientId: string;
-          status: "new" | "in_transit" | "delivered";
-          weight: number;
-          destination: string;
-          id: string;
-        }[]
-      >,
-      Error
-    >
-  >;
+  action: (
+    options?: RefetchOptions | undefined,
+  ) => Promise<QueryObserverResult<NoInfer<Order[] | Order>, Error>>;
 }
 export function ErrorMessage({ action }: ErrorMessageProps) {
   return (
