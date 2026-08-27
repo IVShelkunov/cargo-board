@@ -9,6 +9,7 @@ import { ErrorMessage } from "../components/ui/ErrorMessage";
 import { useDebounce } from "../hooks/useDebounce";
 import { useState } from "react";
 import { OrderDetail } from "../components/shared/OrderDetails";
+import { AuthWidget } from "../components/ui/AuthWidget";
 
 export function DashboardPage() {
   const [inputValue, setInputValue] = useState("");
@@ -20,7 +21,8 @@ export function DashboardPage() {
 
   const { isOpen, openModal } = useModalStore();
   return (
-    <main className="flex flex-col md:flex-row items-center justify-center gap-4 text-base md:text-xl p-5">
+    <main className="relative min-w-full flex flex-col md:flex-row items-center justify-center gap-4 text-base md:text-xl p-5">
+      <AuthWidget />
       {isOpen && <Modal />}
       <div className="flex flex-col gap-4">
         <h2 className="text-center p-1 text-2xl tracking-widest font-extrabold">
@@ -42,7 +44,7 @@ export function DashboardPage() {
             onChange={(e) => setInputValue(e.target.value)}
           />
         </div>
-        <div className="flex  justify-center gap-4">
+        <div className="flex flex-col md:flex-row  justify-center gap-4 ">
           {isLoading && <div className="text-slate-400">Loading...</div>}
           {isError && <ErrorMessage action={refetch} />}
           {!data ||

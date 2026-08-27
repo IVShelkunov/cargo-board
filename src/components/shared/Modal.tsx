@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { useModalStore } from "../../store/useModalStore";
-//import { CreateOrderForm } from "./CreateOrderForm";
 import { OrderForm } from "./OrderForm";
 
 export default function Modal() {
@@ -22,7 +21,6 @@ export default function Modal() {
       className=" fixed inset-0 z-50 w-full h-screen flex items-center justify-center bg-black/55 "
     >
       <div onClick={(e) => e.stopPropagation()}>
-        {/* <CreateOrderForm /> */}
         <OrderForm />
       </div>
     </div>

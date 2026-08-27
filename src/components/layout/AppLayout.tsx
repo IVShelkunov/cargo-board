@@ -10,7 +10,7 @@ export function AppLayout() {
         </h1>
         <Logo />
       </header>
-      <main className="flex flex-row items-center justify-center ">
+      <main className="flex flex-row items-center justify-center">
         <Outlet />
       </main>
     </div>

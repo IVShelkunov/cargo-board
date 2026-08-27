@@ -1,6 +1,5 @@
-import { data } from "react-router-dom";
 import type { CreateOrderDTO, Order } from "../types/orders.schema";
-import { api } from "./instance";
+import { api } from "../../axios/instance";
 
 export const getOrders = async (search?: string): Promise<Order[]> => {
     const params = search ? { "destination:startsWith": search } : {};

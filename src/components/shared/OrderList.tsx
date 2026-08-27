@@ -15,7 +15,7 @@ export function OrderList({ orders }: OrderListProps) {
   const { setSelectedOrderId } = useOrderStore();
   return (
     <div className="flex flex-col items-center justify-center">
-      <table className="bg-slate-400 ">
+      <table className="bg-slate-400 w-full">
         <thead>
           <tr>
             {columns.map((col) => (

@@ -6,8 +6,10 @@ import { useModalStore } from "../../store/useModalStore";
 import { ActionButton } from "../ui/ActionButton";
 import { EditPan } from "../icons/EditPan";
 import DeleteCart from "../icons/DeleteCart";
+import { useUserStore } from "../../store/useUserStore";
 
 export function OrderDetail() {
+  const { user } = useUserStore();
   const queryClient = useQueryClient();
   const { selectedOrderId, setSelectedOrderId } = useOrderStore();
   const { openModal } = useModalStore();
@@ -33,16 +35,16 @@ export function OrderDetail() {
     }
   };
   return (
-    <div className="border border-sky-900 rounded-2xl h-avto min-w-1/3 p-4">
+    <div className="border border-sky-900 rounded-2xl  min-w-1/3 p-4">
       {isError && <ErrorMessage action={refetch} />}
       {isLoading && <div>Loading</div>}
       {!selectedOrderId && <div>Select order</div>}
       {data && (
         <div className="flex flex-col gap-4 bg-slate-500 text-white p-4">
-          <h2>
+          <h3>
             <span className="text-yellow-200 font-bold">ORDER: </span>
             {data.id}
-          </h2>
+          </h3>
           <p>
             <span className="text-yellow-200 font-bold">CLIENT:</span>{" "}
             {data.clientId}
@@ -56,14 +58,16 @@ export function OrderDetail() {
               EDIT
               <EditPan className="w-5 h-5" />
             </ActionButton>
-            <ActionButton
-              disabled={deleteOrderMutation.isPending}
-              type="button"
-              action={() => handleDeleteOrder(data.id)}
-            >
-              DELETE
-              <DeleteCart className="w-6 h-6" />
-            </ActionButton>
+            {user && user.role === "admin" && (
+              <ActionButton
+                disabled={deleteOrderMutation.isPending}
+                type="button"
+                action={() => handleDeleteOrder(data.id)}
+              >
+                DELETE
+                <DeleteCart className="w-6 h-6" />
+              </ActionButton>
+            )}
           </div>
         </div>
       )}

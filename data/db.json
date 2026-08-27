@@ -107,5 +107,27 @@
       "id": "-qxaab18jaI"
     }
   ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "users":[
+    {
+      "id": "iu14hejo",
+      "name":"Ilya",
+      "email":"shelkunow48@gmail.com",
+      "password":"desant777",
+      "role":"admin"
+    },
+    {
+      "id": "qwerty98",
+      "name":"John",
+      "email":"john1994@gmail.com",
+      "password":"John999",
+      "role":"user"
+    },
+    {
+      "id": "iuqwhe2h",
+      "name":"Anna",
+      "email":"Anna281400@gmail.com",
+      "password":"16Anna61",
+      "role":"user"
+    }
+  ]
 }
