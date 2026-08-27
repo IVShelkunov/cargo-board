@@ -8,6 +8,7 @@ import { AppLayout } from "./components/layout/AppLayout.tsx";
 import { ErrorPage } from "./pages/ErrorPage.tsx";
 import { DashboardPage } from "./pages/DashboardPage.tsx";
 import { LoginPage } from "./pages/LoginPage.tsx";
+import { ProtectedRoute } from "./components/layout/ProtectedRoute.tsx";
 
 const queryClient = new QueryClient();
 const router = createBrowserRouter([
@@ -17,12 +18,17 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage />,
     children: [
       {
-        index: true,
-        element: <DashboardPage />,
-      },
-      {
         path: "login",
         element: <LoginPage />,
+      },
+      {
+        element: <ProtectedRoute />,
+        children: [
+          {
+            index: true,
+            element: <DashboardPage />,
+          },
+        ],
       },
     ],
   },

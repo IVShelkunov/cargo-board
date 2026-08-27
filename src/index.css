@@ -1,5 +1,13 @@
 @import "tailwindcss";
  @layer {
+    body {
+        background-color: var(--color-slate-300);
+    }
+    h2 {
+        font-weight: 700;
+        letter-spacing: 0.5em;
+        font-size: var(--text-2xl);
+    }
     input {
         background-color:var(--color-yellow-200);
         border-radius: 15px;
