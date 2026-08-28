@@ -7,6 +7,7 @@ import { ActionButton } from "../ui/ActionButton";
 import { EditPan } from "../icons/EditPan";
 import DeleteCart from "../icons/DeleteCart";
 import { useUserStore } from "../../store/useUserStore";
+import { LoadSpinner } from "../ui/LoadSpiner";
 
 export function OrderDetail() {
   const { user } = useUserStore();
@@ -37,7 +38,7 @@ export function OrderDetail() {
   return (
     <div className="border border-sky-900 rounded-2xl  min-w-1/3 p-4">
       {isError && <ErrorMessage action={refetch} />}
-      {isLoading && <div>Loading</div>}
+      {isLoading && <LoadSpinner />}
       {!selectedOrderId && <div>Select order</div>}
       {data && (
         <div className="flex flex-col gap-4 bg-slate-500 text-white p-4">

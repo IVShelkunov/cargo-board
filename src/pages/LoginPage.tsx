@@ -10,6 +10,7 @@ import { loginUser } from "../features/users/api/userApi";
 import { useUserStore } from "../store/useUserStore";
 import { ValidateMessage } from "../components/ui/ValidateMessage";
 import { useNavigate } from "react-router-dom";
+import LoginIcon from "../components/icons/LoginIcon";
 
 export function LoginPage() {
   const navigate = useNavigate();
@@ -60,6 +61,7 @@ export function LoginPage() {
         {errors.root && <ValidateMessage message={errors.root.message} />}
         <ActionButton type="submit" disabled={false}>
           LOGIN
+          <LoginIcon className="w-6 h-6" />
         </ActionButton>
       </form>
     </main>

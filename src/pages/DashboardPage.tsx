@@ -10,6 +10,7 @@ import { useDebounce } from "../hooks/useDebounce";
 import { useState } from "react";
 import { OrderDetail } from "../components/shared/OrderDetails";
 import { AuthWidget } from "../components/ui/AuthWidget";
+import { LoadSpinner } from "../components/ui/LoadSpiner";
 
 export function DashboardPage() {
   const [inputValue, setInputValue] = useState("");
@@ -45,7 +46,7 @@ export function DashboardPage() {
           />
         </div>
         <div className="flex flex-col md:flex-row  justify-center gap-4 ">
-          {isLoading && <div className="text-slate-400">Loading...</div>}
+          {isLoading && <LoadSpinner />}
           {isError && <ErrorMessage action={refetch} />}
           {!data ||
             (data.length === 0 && (
