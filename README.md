@@ -4,9 +4,9 @@ A professional B2B solution for managing logistics orders. The application is de
 
 ## 🚀 Technology stack
 - **Frontend:** React, TypeScript
-- **State Management:** TanStack Query (серверное состояние), Zustand (UI-стейт)
+- **State Management:** TanStack Query (server state), Zustand (UI-state)
 - **Forms & Validation:** React Hook Form, Zod
-- **API:** Axios (с интерсепторами), json-server (Mock API)
+- **API:** Axios (with interceptors), json-server (Mock API)
 - **Styling:** Tailwind CSS
 - **Routing:** React Router v6
 
