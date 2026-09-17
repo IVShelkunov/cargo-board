@@ -1,9 +1,14 @@
+import { cn } from "../../lib/utils";
+
 export default function DeleteCart({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 50 50"
       xmlns="http://www.w3.org/2000/svg"
-      className={className}
+      className={cn(
+        "group-hover:scale-125 transition-all duration-300",
+        className,
+      )}
     >
       <defs>
         <line
@@ -19,8 +24,8 @@ export default function DeleteCart({ className }: { className?: string }) {
       </defs>
       <path
         d="M 5,10 l 40,0 a 5,5 0 0 0 -5,-5 l -10,0 l 0,-2.5 l -10,0 l 0,2.5 l -10,0 a 5,5 0 0 0 -5,5"
-        stroke="#fff"
         fill="none"
+        className="group-hover:-translate-y-1 stroke-white"
       />
       <path
         d="M 10,15 l 0,25 a 5,5 0 0 0 5,5 l 20,0 a 5,5 0 0 0 5,-5 l 0,-25 Z"
