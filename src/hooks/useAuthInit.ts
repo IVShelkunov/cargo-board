@@ -18,6 +18,9 @@ export const useAuthInit = () => {
         retry: false,
     });
     useEffect(() => {
+        if (!userId) {
+            setLoading(false);
+        }
         if (query.isLoading) setLoading(true);
         if (query.isSuccess && query.data) {
             setLoading(false)

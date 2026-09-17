@@ -15,7 +15,7 @@ export function ActionButton({
   return (
     <button
       type={type}
-      className="flex justify-center items-center gap-1"
+      className="flex justify-center items-center gap-1 group transition-all duration-300"
       onClick={action}
       disabled={disabled}
     >

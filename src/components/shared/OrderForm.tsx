@@ -15,6 +15,7 @@ import CancelCross from "../icons/CancelCross";
 import { addOrder, updateOrder } from "../../features/orders/api/orderApi";
 import AddCross from "../icons/AddCross";
 import BackRow from "../icons/BackRow";
+import SaveIcon from "../icons/SaveIcon";
 
 export function OrderForm() {
   const { orderToEdit, closeModal } = useModalStore();
@@ -88,7 +89,10 @@ export function OrderForm() {
         <>
           <ActionButton disabled={orderMutate.isPending} type="submit">
             {isEditmode ? (
-              <span>SAVE</span>
+              <>
+                <span>SAVE</span>
+                <SaveIcon className="w-5 h-5" />
+              </>
             ) : (
               <>
                 CREATE ORDER

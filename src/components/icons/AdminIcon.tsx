@@ -6,8 +6,14 @@ export default function AdminIcon({ className }: { className?: string }) {
       className={className}
     >
       <circle cx={25} cy={15} r={10} fill="#fff" />
-      <path d="M 20,50 l 5,-15 l -5,-5 a 20,20 0 0 0 -15,20" fill="#fff" />
-      <path d="M 30,50 l -5,-15 l 5,-5 a 20,20 0 0 1 15,20" fill="#fff" />
+      <path
+        d="M 20,50 l 5,-15 l -5,-5 a 20,20 0 0 0 -15,20"
+        className="fill-amber-50"
+      />
+      <path
+        d="M 30,50 l -5,-15 l 5,-5 a 20,20 0 0 1 15,20"
+        className="fill-amber-50"
+      />
     </svg>
   );
 }
